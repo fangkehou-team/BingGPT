@@ -17,5 +17,6 @@
 ## What Needs Help
 
 - Logo for macOS only have 1024x1024@x1 format, I cant find a proper tool for linux to generate an `icns` file that contains different size of the image and I don't have a MacBook.
+- GitHub Action build for macOS always fails, so no binary for macOS were produced. It will remain if electron forge or node-gyp has not solved it.
 
 If you can help me improve this app, Please contribute to this repository! Pull Request and Issue is welcome.
