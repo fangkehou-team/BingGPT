@@ -28,12 +28,13 @@
     "vite": "^4.1.1"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0",
     "electron-context-menu": "^3.6.1",
+    "electron-squirrel-startup": "^1.0.0",
     "electron-store": "^8.1.0",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",
     "turndown": "^7.1.2",
-    "vue": "^3.3.12"
+    "vue": "^3.3.12",
+    "vue-router": "^4.2.5"
   }
 }

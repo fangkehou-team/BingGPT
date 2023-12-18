@@ -1,6 +1,15 @@
 <script setup>
 
 import Microsoft from "../components/Microsoft.vue";
+import {ref, watch} from "vue";
+
+let nosplash = ref(localStorage.getItem("nosplash") | "false")
+
+// 可以直接侦听一个 ref
+watch(nosplash, async (newSplash, oldSplash) => {
+  localStorage.setItem("nosplash", String(newSplash))
+})
+
 </script>
 
 <template>
@@ -8,8 +17,8 @@ import Microsoft from "../components/Microsoft.vue";
     <img style="width: 100px" src="../assets/copilot.svg" alt="Copilot Logo">
     <p class="splash_primary">BingGPT</p>
     <p class="splash_secondary">Powered By Copilot with Bing Chat</p>
-    <p class="splash_check"><input type="checkbox">don't show this again</p>
-    <a style='display: block; margin-top: 10px; font-size: 25px; text-align: center;' href='https://www.bing.com/fd/auth/signin?action=interactive&provider=windows_live_id&return_url=https%3a%2f%2fwww.bing.com'><Microsoft></Microsoft></a>"
+    <p class="splash_check"><input type="checkbox" v-model="nosplash">don't show this again</p>
+    <a style='display: block; margin-top: 10px; font-size: 25px; text-align: center;' href='https://www.bing.com/fd/auth/signin?action=interactive&provider=windows_live_id&return_url=https%3a%2f%2fwww.bing.com'><Microsoft></Microsoft></a>
   </div>
 </template>
 

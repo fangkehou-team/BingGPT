@@ -50,6 +50,8 @@ const createWindow = () => {
           : theme === 'dark'
               ? true
               : false
+
+  nativeTheme.themeSource = theme
   // Create window
   const mainWindow = new BrowserWindow({
     title: 'BingGPT',
@@ -221,14 +223,14 @@ const createWindow = () => {
         label: 'Feedback',
         visible: parameters.selectionText.trim().length === 0,
         click: () => {
-          shell.openExternal('https://github.com/dice2o/BingGPT/issues')
+          shell.openExternal('https://github.com/fangkehou-team/BingGPT/issues')
         },
       },
       {
         label: 'BingGPT v0.3.7',
         visible: parameters.selectionText.trim().length === 0,
         click: () => {
-          shell.openExternal('https://github.com/dice2o/BingGPT/releases')
+          shell.openExternal('https://github.com/fangkehou-team/BingGPT/releases')
         },
       },
     ],
@@ -375,7 +377,7 @@ const createWindow = () => {
     // console.log(url);
     if (url === "https://www.bing.com/") {
       setTimeout(() => {
-        mainWindow.loadURL(bingUrl);
+        mainWindow.loadURL(bingUrl + "?login=1");
       }, 3000);
     }
 
