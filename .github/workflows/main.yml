@@ -15,7 +15,7 @@ jobs:
       - name: Install Depentent
         if: matrix.os == 'ubuntu-latest'
         run: sudo apt-get install -y rpm fakeroot
-        
+
       - name: Check out Git repository
         uses: actions/checkout@v1
 
@@ -29,14 +29,14 @@ jobs:
           node-version: 16
 
       # step5: cleanup artifacts in dist_electron
-#      - name: cleanup package lock
-#        run: |
-#          npx rimraf "package-lock.json"
+      #- name: cleanup package lock
+      #  run: |
+      #    npx rimraf "package-lock.json"
 
       # step3: npm install
-      - name: npm install amd pip install
+      - name: npm install
         run: |
-          npm ci
+          npm install
 
       # step4: build app
       - name: build app
@@ -56,6 +56,5 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: "out/make/**"
-          body_path: CHANGELOG.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
