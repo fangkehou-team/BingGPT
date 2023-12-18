@@ -23,6 +23,8 @@ Modified By Team Fangkehou.
 
 Please go to [Releases page of this repository](https://github.com/fangkehou-team/BingGPT/releases) to get the latest build.
 
+For macOS users, you have to build the binary by yourself. you can check out the CHANGELOG.md to get the reason
+
 ## Usage
 
 - Sign in to your Microsoft account
