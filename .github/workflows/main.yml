@@ -36,7 +36,6 @@ jobs:
       # step3: npm install
       - name: npm install amd pip install
         run: |
-#          python3 -m pip install setuptools
           npm ci
 
       # step4: build app
