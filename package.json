@@ -3,7 +3,7 @@
   "productName": "BingGPT",
   "version": "0.4.1",
   "description": "AI-powered copilot",
-  "author": "dice2o, Team Fangkehou",
+  "author": "dice2o, Team Fangkehou <admin@fangkehou.eu.org> (https://www.fangkehou.eu.org/)",
   "license": "Apache-2.0",
   "scripts": {
     "dev": "vite",
