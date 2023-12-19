@@ -39,7 +39,12 @@ jobs:
 
       # step6: upload artifacts
       - name: upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.os }}
-          path: 'release'
+          path: |
+            'release/**/*.dmg'
+            'release/**/*.exe'
+            'release/**/*.deb'
+            'release/**/*.rpm'
+            'release/**/*.AppImage'
