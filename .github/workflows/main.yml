@@ -18,12 +18,10 @@ jobs:
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@v4
         with:
-          node-version: 16
-
-      # step5: cleanup artifacts in dist_electron
-      #- name: cleanup package lock
-      #  run: |
-      #    npx rimraf "package-lock.json"
+          node-version: 18
+                    
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.4.0
 
       # step3: npm install
       - name: npm install
