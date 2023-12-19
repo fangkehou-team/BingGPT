@@ -7,13 +7,12 @@
   "license": "Apache-2.0",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build && electron-builder",
+    "build": "vue-tsc && vite build && electron-builder -p onTag",
     "preview": "vite preview"
   },
   "dependencies": {
     "vue": "^3.3.4",
     "electron-context-menu": "^3.6.1",
-    "electron-squirrel-startup": "^1.0.0",
     "electron-store": "^8.1.0",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",
