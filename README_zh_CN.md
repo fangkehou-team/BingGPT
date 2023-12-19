@@ -59,7 +59,7 @@
 
 ## 截图
 
-<img width="601" src="./screenshot.png" alt="BingGPT 截图">
+<img width="618" src="./docs/screenshot.png" alt="BingGPT 截图">
 
 ## 许可证
 

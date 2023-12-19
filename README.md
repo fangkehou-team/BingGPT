@@ -65,7 +65,7 @@ sudo xattr -d com.apple.quarantine /Applications/BingGPT.app
 
 ## Screenshot
 
-<img width="601" src="./screenshot.png" alt="BingGPT Screenshot">
+<img width="618" src="./docs/screenshot.png" alt="BingGPT Screenshot">
 
 ## License
 

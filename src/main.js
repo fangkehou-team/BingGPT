@@ -36,7 +36,7 @@ const getWrapperUrl = () => {
   if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
     return MAIN_WINDOW_VITE_DEV_SERVER_URL;
   } else {
-    return path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`);
+    return path.join(__dirname, `../index.html`);
   }
 }
 
