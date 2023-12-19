@@ -1,9 +1,9 @@
 import { createApp } from 'vue';
-import App from './wrapper/App.vue';
-import Splash from "./wrapper/pages/Splash.vue";
-import Main from "./wrapper/pages/Main.vue";
+import App from './App.vue';
+import Splash from "./pages/Splash.vue";
+import Main from "./pages/Main.vue";
 import {createRouter, createWebHashHistory} from "vue-router";
-import Loading from "./wrapper/pages/Loading.vue";
+import Loading from "./pages/Loading.vue";
 
 
 const routes = [

@@ -1,20 +1,33 @@
-const {
+import {
   app,
   shell,
   nativeTheme,
   dialog,
-  ipcMain,
   Menu,
-  BrowserWindow,
-} = require('electron')
-const contextMenu = require('electron-context-menu')
-const Store = require('electron-store')
-const path = require('path')
-const fs = require('fs')
+  BrowserWindow, ipcMain
+} from 'electron'
+import contextMenu from 'electron-context-menu'
+import path from 'node:path'
+import Store from 'electron-store'
 
-// Handle creating/removing shortcuts on Windows when installing/uninstalling.
-if (require('electron-squirrel-startup')) app.quit()
+// The built directory structure
+//
+// ├─┬─┬ dist
+// │ │ └── index.html
+// │ │
+// │ ├─┬ dist-electron
+// │ │ ├── main.js
+// │ │ └── preload.js
+// │
+process.env.DIST = path.join(__dirname, '../dist')
+process.env.VITE_PUBLIC = app.isPackaged ? process.env.DIST : path.join(process.env.DIST, '../public')
 
+
+let mainWindow
+// 🚧 Use ['ENV_NAME'] avoid vite:define plugin - Vite@2.x
+const VITE_DEV_SERVER_URL = process.env['VITE_DEV_SERVER_URL']
+
+//config init
 const configSchema = {
   theme: {
     enum: ['system', 'light', 'dark'],
@@ -31,16 +44,16 @@ const configSchema = {
 }
 const config = new Store({ schema: configSchema, clearInvalidConfig: true })
 
-const getWrapperUrl = () => {
+function getWrapperUrl() {
   // and load the index.html of the app.
-  if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
-    return MAIN_WINDOW_VITE_DEV_SERVER_URL;
+  if (VITE_DEV_SERVER_URL) {
+    return VITE_DEV_SERVER_URL;
   } else {
-    return path.join(__dirname, `../index.html`);
+    return path.join(process.env.DIST, 'index.html');
   }
 }
 
-const createWindow = () => {
+function createWindow() {
 
   // Get theme settings
   const theme = config.get('theme')
@@ -52,15 +65,21 @@ const createWindow = () => {
               : false
 
   nativeTheme.themeSource = theme
-  // Create window
-  const mainWindow = new BrowserWindow({
+
+  // win = new BrowserWindow({
+  //   icon: path.join(process.env.VITE_PUBLIC, 'electron-vite.svg'),
+  //   webPreferences: {
+  //     preload: path.join(__dirname, 'preload.js'),
+  //   },
+  // })
+
+  mainWindow = new BrowserWindow({
     title: 'BingGPT',
     backgroundColor: isDarkMode ? '#1c1c1c' : '#eeeeee',
-    icon: 'icon.png',
+    icon:path.join(process.env.VITE_PUBLIC, 'icon.png'),
     width: 601,
     height: 800,
     titleBarStyle: 'hidden',
-    titleBarOverlay: true,
     titleBarOverlay: {
       color: isDarkMode ? '#333333' : '#ffffff',
       symbolColor: isDarkMode ? '#eeeeee' : '#1c1c1c',
@@ -71,11 +90,11 @@ const createWindow = () => {
       nodeIntegration: true,
     },
   })
+
   // Get always on top settings
   const alwaysOnTop = config.get('alwaysOnTop')
   mainWindow.setAlwaysOnTop(alwaysOnTop)
-  // Get language
-  const locale = app.getLocale() || 'en-US'
+
   // Hide main menu (Windows)
   Menu.setApplicationMenu(null)
   // Create context menu
@@ -254,7 +273,7 @@ const createWindow = () => {
       event.preventDefault()
       // Get cookies
       mainWindow
-          .loadURL(bingUrl.replace('edgediscover/query', 'edgesvc/shell'))
+          ?.loadURL(bingUrl.replace('edgediscover/query', 'edgesvc/shell'))
           .then(() => {
             setTimeout(() => {
               mainWindow.loadURL(bingUrl)
