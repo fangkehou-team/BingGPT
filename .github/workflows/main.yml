@@ -25,7 +25,6 @@ jobs:
         with:
           version: latest
 
-      # step3: npm install
       - name: npm install
         run: |
           pnpm install
@@ -43,4 +42,4 @@ jobs:
         with:
           name: ${{ matrix.os }}
           path: |
-            'release'
+            'release/**/BingGPT-*'
