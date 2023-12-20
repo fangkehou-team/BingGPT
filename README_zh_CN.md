@@ -12,7 +12,10 @@
   </a>
   <a href="https://github.com/fangkehou-team/BingGPT/releases">
     <img alt="Downloads" src="https://img.shields.io/github/downloads/fangkehou-team/BingGPT/total?color=blue">
-   </a>
+  </a>
+  <a href="https://github.com/fangkehou-team/BingGPT/releases">
+    <img alt="Version" src="https://img.shields.io/github/v/release/fangkehou-team/BingGPT?color=blue">
+  </a>
 </p>
 
 [English](./README.md) | 中文
