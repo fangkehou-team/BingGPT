@@ -28,6 +28,12 @@ can you see the splash screen(or the loading screen if you click the checkbox on
 - [ ] I have tried right click and menu have shown.
 - [ ] I can see the splash or loading screen.
 
+<!-- Finally, please check that your problem haven't issued by other person. Please note that our community welcomes both Chinese and English so you may have to check it twice. -->
+<!-- 最后，请检查您的问题是否已被别人提过了，您可以通过搜索功能来确定。请注意，本社区中英双语，请查找两种语言。 -->
+
+**Duplication Check**
+- [ ] I have searched the issue list and haven‘t found any imformation about my issue.
+
 **Describe the bug**
 A clear and concise description of what the bug is.
 
