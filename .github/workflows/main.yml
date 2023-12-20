@@ -42,4 +42,4 @@ jobs:
         with:
           name: ${{ matrix.os }}
           path: |
-            'release/**/BingGPT-*'
+            'release'
