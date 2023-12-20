@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="180" src="./icon.png" alt="BingGPT">
+  <img width="180" src="./public/icon.png" alt="BingGPT">
   <h1 align="center">BingGPT</h1>
   <p align="center">Desktop application of new Bing's AI-powered chat</p>
 </p>
@@ -22,8 +22,6 @@ Modified By Team Fangkehou.
 ## Install
 
 Please go to [Releases page of this repository](https://github.com/fangkehou-team/BingGPT/releases) to get the latest build.
-
-For macOS users, you have to build the binary by yourself. you can check out the CHANGELOG.md to get the reason
 
 ## Usage
 

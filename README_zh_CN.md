@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="180" src="./icon.png" alt="BingGPT">
+  <img width="180" src="./public/icon.png" alt="BingGPT">
   <h1 align="center">BingGPT</h1>
   <p align="center">新必应的人工智能聊天桌面应用
 

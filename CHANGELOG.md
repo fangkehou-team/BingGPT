@@ -1,10 +1,11 @@
-# Release 0.4.1
+# Release 0.4.2
+
+___this is a fix version for 0.4.1, which has blank screen bugs, please uninstall the old version before install the new version___
 
 ## What's Improved
 
-- A new Logo!!! Now `BingGPT` is becoming the wrapper of `Copilot with Bing Chat` (Although the app name won't change)
-- A new Logo for macOS Platform which meets Apple's design guide
-- A new wrapper written in Vue has been included in order to recover the function of bingGPT and provides a user-friendly interface instead of just right click.
+- macOS build works again since we have changed to `electron-builder` to build the binary
+- blank screen error fixed.
 
 ## What's Broken
 
@@ -16,7 +17,6 @@
 
 ## What Needs Help
 
-- Logo for macOS only have 1024x1024@x1 format, I cant find a proper tool for linux to generate an `icns` file that contains different size of the image and I don't have a MacBook.
-- GitHub Action build for macOS always fails, so no binary for macOS were produced. It will remain if electron forge or node-gyp has not solved it.
+- Logo for macOS only have 1024x1024@x1 format png, I cant find a proper tool for linux to generate an `icns` file that contains different size of the image and I don't have a MacBook, so macOS build logo may not be shown on the desktop.
 
 If you can help me improve this app, Please contribute to this repository! Pull Request and Issue is welcome.

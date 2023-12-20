@@ -9,6 +9,7 @@ import {
 import contextMenu from 'electron-context-menu'
 import path from 'node:path'
 import Store from 'electron-store'
+import * as urlUtil from "node:url"
 
 // The built directory structure
 //
@@ -49,7 +50,7 @@ function getWrapperUrl() {
   if (VITE_DEV_SERVER_URL) {
     return VITE_DEV_SERVER_URL;
   } else {
-    return path.join(process.env.DIST, 'index.html');
+    return 'file://' + path.join(process.env.DIST, 'index.html');
   }
 }
 
@@ -256,7 +257,7 @@ function createWindow() {
   })
 
   const bingUrl = getWrapperUrl()
-  mainWindow.loadURL(bingUrl)
+  mainWindow.loadURL(urlUtil.format(bingUrl))
 
   // mainWindow.webContents.openDevTools();
 
@@ -396,7 +397,7 @@ function createWindow() {
     // console.log(url);
     if (url === "https://www.bing.com/") {
       setTimeout(() => {
-        mainWindow.loadURL(bingUrl + "?login=1");
+        mainWindow.loadURL(urlUtil.format(bingUrl + "?login=1"));
       }, 3000);
     }
 
