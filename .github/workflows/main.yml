@@ -36,8 +36,20 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: see directory
-        run: ls
+      - name: cleanup artifacts for windows
+        if: matrix.os == 'windows-latest'
+        run: |
+          npx rimraf "release/!(*.exe)"
+
+      - name: cleanup artifacts for macos
+        if: matrix.os == 'macos-latest'
+        run: |
+          npx rimraf "release/!(*.dmg)"
+
+      - name: cleanup artifacts for macos
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          npx rimraf "release/!(*.deb|*.AppImage|*.rpm)"
 
       # step6: upload artifacts
       - name: upload artifacts
