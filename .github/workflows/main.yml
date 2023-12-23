@@ -36,21 +36,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: cleanup artifacts for windows
-        if: matrix.os == 'windows-latest'
-        run: |
-          pnpm dlx rimraf release/* --glob "!(*.exe)"
-
-      - name: cleanup artifacts for macos
-        if: matrix.os == 'macos-latest'
-        run: |
-          pnpm dlx rimraf "release/!(*.dmg)"
-
-      - name: cleanup artifacts for macos
-        if: matrix.os == 'ubuntu-latest'
-        run: |
-          pnpm dlx rimraf "release/!(*.deb|*.AppImage|*.rpm)"
-
       # step6: upload artifacts
       - name: upload artifacts
         uses: actions/upload-artifact@v3
