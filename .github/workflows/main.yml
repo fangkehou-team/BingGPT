@@ -36,10 +36,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: see directory
+        run: ls
+
       # step6: upload artifacts
       - name: upload artifacts
         uses: actions/upload-artifact@v3
         with:
           name: ${{ matrix.os }}
-          path: |
-            'release/**/BingGPT-*'
+          path: 'release/'

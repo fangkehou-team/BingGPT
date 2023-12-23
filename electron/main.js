@@ -1,11 +1,4 @@
-import {
-  app,
-  shell,
-  nativeTheme,
-  dialog,
-  Menu,
-  BrowserWindow, ipcMain
-} from 'electron'
+import {app, BrowserWindow, dialog, ipcMain, Menu, nativeTheme, shell} from 'electron'
 import contextMenu from 'electron-context-menu'
 import path from 'node:path'
 import Store from 'electron-store'
@@ -50,7 +43,11 @@ function getWrapperUrl() {
   if (VITE_DEV_SERVER_URL) {
     return VITE_DEV_SERVER_URL;
   } else {
-    return 'file://' + path.join(process.env.DIST, 'index.html');
+    return require('url').format({
+      protocol: 'file',
+      slashes: true,
+      pathname: path.join(process.env.DIST, 'index.html')
+    })
   }
 }
 
