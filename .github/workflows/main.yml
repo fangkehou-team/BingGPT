@@ -39,7 +39,7 @@ jobs:
       - name: cleanup artifacts for windows
         if: matrix.os == 'windows-latest'
         run: |
-          pnpm dlx rimraf "release/!(*.exe)"
+          pnpm dlx rimraf release\* -exclude *.exe
 
       - name: cleanup artifacts for macos
         if: matrix.os == 'macos-latest'
