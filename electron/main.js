@@ -43,7 +43,7 @@ function getWrapperUrl() {
   if (VITE_DEV_SERVER_URL) {
     return VITE_DEV_SERVER_URL;
   } else {
-    return require('url').format({
+    return urlUtil.format({
       protocol: 'file',
       slashes: true,
       pathname: path.join(process.env.DIST, 'index.html')
