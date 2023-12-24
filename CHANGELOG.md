@@ -1,11 +1,11 @@
-# Release 0.4.2
+# Release 0.4.3
 
 ___this is a fix version for 0.4.1, which has blank screen bugs, please uninstall the old version before install the new version___
 
 ## What's Improved
 
 - macOS build works again since we have changed to `electron-builder` to build the binary
-- blank screen error fixed.
+- blank screen error fixed....should be.
 
 ## What's Broken
 
