@@ -18,7 +18,7 @@ watch(nosplash, async (newSplash, oldSplash) => {
     <p class="splash_primary">BingGPT</p>
     <p class="splash_secondary">Powered By Copilot with Bing Chat</p>
     <p class="splash_check"><input type="checkbox" v-model="nosplash">don't show this again</p>
-    <a style='display: block; margin-top: 10px; font-size: 25px; text-align: center;' href='https://www.bing.com/fd/auth/signin?action=interactive&provider=windows_live_id&return_url=https%3a%2f%2fwww.bing.com'><Microsoft></Microsoft></a>
+    <a style='display: block; margin-top: 10px; font-size: 25px; text-align: center;' href='https://www.bing.com/fd/auth/signin?action=interactive&provider=windows_live_id&return_url=https%3A%2F%2Fbing.com'><Microsoft></Microsoft></a>
   </div>
 </template>
 
