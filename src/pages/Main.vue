@@ -1,8 +1,9 @@
 <script setup>
 import {ref} from "vue";
 
-let chatUrl = window.electron.ipcRenderer.getChatUrl()
-let composeUrl = window.electron.ipcRenderer.getComposeUrl()
+const urlWrapper = "https://www.bing.com/fd/auth/signin?action=interactive&provider=windows_live_id&return_url=";
+let chatUrl = urlWrapper + encodeURIComponent(window.ipcRenderer.getChatUrl())
+let composeUrl = urlWrapper + encodeURIComponent(window.ipcRenderer.getComposeUrl())
 
 let tab = ref("0")
 </script>
@@ -16,11 +17,11 @@ let tab = ref("0")
       <label for="compose" class="tab tab-success">Compose</label>
     </div>
   </div>
-  <iframe :hidden="tab != '0'" id="underside-iframe-container" name="underside-iframe-container" frameborder="0"
+  <iframe :hidden="tab != '0'" class="underside-iframe" :class="{ active: tab == '0' }" name="underside-iframe-container" frameborder="0"
           csp="frame-src https://www.bing.com/search https://edgeservices.bing.com/ https://www.bing.com/shop/productpage https://www.bing.com/images/create https://login.live.com/login.srf https://www.bing.com/turing/captcha/challenge https://www.bing.com/api/shopping/v1/edgeframe https://www.msn.com/widgets/fullpage/gaming/gamingfeed-widget https://challenges.cloudflare.com/ https://www.bing.com/lite/auw https://www.bing.com/travelgrowthedge/ux https://login.live.com/ https://login.microsoftonline.com/; base-uri 'self'; require-trusted-types-for 'script'; trusted-types default;"
           allow="clipboard-write;microphone;camera" :src="chatUrl"
           style="position: absolute; width: 100%; height: calc(100% - 37px);; top: 0; left: 0; padding-top: 37px"></iframe>
-  <iframe :hidden="tab != '1'" id="underside-iframe-container" name="underside-iframe-container" frameborder="0"
+  <iframe :hidden="tab != '1'" class="underside-iframe" :class="{ active: tab == '1' }" name="underside-iframe-container" frameborder="0"
           csp="frame-src https://www.bing.com/search https://edgeservices.bing.com/ https://www.bing.com/shop/productpage https://www.bing.com/images/create https://login.live.com/login.srf https://www.bing.com/turing/captcha/challenge https://www.bing.com/api/shopping/v1/edgeframe https://www.msn.com/widgets/fullpage/gaming/gamingfeed-widget https://challenges.cloudflare.com/ https://www.bing.com/lite/auw https://www.bing.com/travelgrowthedge/ux https://login.live.com/ https://login.microsoftonline.com/; base-uri 'self'; require-trusted-types-for 'script'; trusted-types default;"
           allow="clipboard-write;microphone;camera" :src="composeUrl"
           style="position: absolute; width: 100%; height: calc(100% - 37px); top: 0; left: 0; padding-top: 37px"></iframe>
