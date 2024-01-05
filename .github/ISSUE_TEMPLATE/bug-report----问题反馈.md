@@ -2,16 +2,18 @@
 name: Bug report -- 问题反馈
 about: Create a report to help us improve
 title: "[BUG] Briefly describe the problem you are facing in one sentence."
-labels: ''
+labels: bug
 assignees: ''
 
 ---
 
 <!-- Welcome to BingGPT Community! Both English and Chinese are welcomed, Please fill the blanks. -->
 <!-- Please note that this program is unstable until version 1.0. The problem you are encountering may have already been fixed in the latest version. Please make sure you have updated to the latest version. -->
+<!-- Issues disobey the rules will be closed immediately. -->
 
 <!-- 欢迎参与 BingGPT 社区！使用中英文提问均可，请填写如下内容 -->
 <!-- 请注意，本程序直至1.0前都不稳定，您遇到的问题很可能已经在最新版修复，请确认你已经更新到了最新版本 -->
+<!-- 任何违反规则的Issue都会被立刻关闭 -->
 
 <!-- change [ ] to [x] if you have checked. -->
 <!-- 若你已安装最新版本，请将 [ ] 换为 [x] 。 -->
