@@ -3,6 +3,7 @@ import contextMenu from 'electron-context-menu'
 import path from 'node:path'
 import Store from 'electron-store'
 import * as urlUtil from "node:url"
+import { autoUpdater } from "electron-updater"
 
 // The built directory structure
 //
@@ -54,6 +55,8 @@ function getWrapperUrl() {
 
 function createWindow() {
 
+    autoUpdater.checkForUpdatesAndNotify()
+
     // Get theme settings
     const theme = config.get('theme')
     const isDarkMode =
@@ -78,7 +81,7 @@ function createWindow() {
         icon: path.join(process.env.VITE_PUBLIC, 'icon.png'),
         width: 601,
         height: 800,
-        titleBarStyle: 'hidden',
+        // titleBarStyle: 'hidden',
         titleBarOverlay: {
             color: isDarkMode ? '#333333' : '#ffffff',
             symbolColor: isDarkMode ? '#eeeeee' : '#1c1c1c',
@@ -98,7 +101,7 @@ function createWindow() {
     mainWindow.setAlwaysOnTop(alwaysOnTop)
 
     // Hide main menu (Windows)
-    Menu.setApplicationMenu(null)
+    Menu.setApplicationMenu(Menu.buildFromTemplate([]))
     // Create context menu
     contextMenu({
         window: mainWindow.webContents,
