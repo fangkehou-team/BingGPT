@@ -36,6 +36,8 @@ can you see the splash screen(or the loading screen if you click the checkbox on
 **Duplication Check**
 - [ ] I have searched the issue list and haven‘t found any imformation about my issue.
 
+<!-- 请注意：如果您处在中国大陆境内，请确保您的VPN处于开启状态，并且提交问题前请检查您的网络是否畅通。 -->
+
 **Describe the bug**
 A clear and concise description of what the bug is.
 
@@ -53,7 +55,8 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Desktop (please complete the following information):**
- - OS: [e.g. iOS]
+ - OS: [e.g. Windows, Linux with (Gnome, KDE, etc.) Kernel version x.x, Mac OS]
+ - Arch: [e.g. x86, arm64]
  - Program Version [e.g. 22]
 
 **Additional context**

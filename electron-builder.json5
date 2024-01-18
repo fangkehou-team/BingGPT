@@ -6,7 +6,7 @@
   "appId": "org.eu.fangkehou.binggptee",
   "asar": true,
   "productName": "BingGPT",
-  copyright: "Copyright © 2023 dice2o, Team Fangkehou",
+  "copyright": "Copyright © 2023 dice2o, Team Fangkehou",
   "directories": {
     "output": "release/${version}"
   },
@@ -15,6 +15,7 @@
     "dist-electron"
   ],
   "mac": {
+    "icon": "public/icon-mac.icns",
     "target": [
       {
         "target": "dmg",
@@ -27,7 +28,7 @@
     "artifactName": "${productName}-Mac-${arch}-${version}-Installer.${ext}"
   },
   "win": {
-    icon: "public/icon.ico",
+    "icon": "public/icon.ico",
     "target": [
       {
         "target": "nsis",
@@ -46,6 +47,7 @@
     "deleteAppDataOnUninstall": false
   },
   "linux": {
+    "icon": "public/icon.png",
     "target": [
       {
         "target": "AppImage",
