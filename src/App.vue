@@ -10,7 +10,7 @@ let login = location.search.indexOf("login") >= 0
 if (login) {
   router.push("/main")
 } else if (localStorage.getItem("nosplash") == "true") {
-  window.location.replace("https://www.bing.com/fd/auth/signin?action=interactive&provider=windows_live_id&return_url=https%3A%2F%2Fbing.com")
+  window.location.replace("https://www.bing.com/fd/auth/signin?action=interactive&provider=windows_live_id&return_url=https:%2F%2fwww.bing.com%2F")
 } else {
   router.push("/splash")
 }

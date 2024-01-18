@@ -1,9 +1,9 @@
 <script setup>
 import {ref} from "vue";
 
-const urlWrapper = "https://www.bing.com/fd/auth/signin?action=interactive&provider=windows_live_id&return_url=";
-let chatUrl = urlWrapper + encodeURIComponent(window.ipcRenderer.getChatUrl())
-let composeUrl = urlWrapper + encodeURIComponent(window.ipcRenderer.getComposeUrl())
+// const urlWrapper = "https://www.bing.com/fd/auth/signin?action=interactive&provider=windows_live_id&return_url=";
+let chatUrl = window.ipcRenderer.getChatUrl()
+let composeUrl = window.ipcRenderer.getComposeUrl()
 
 let tab = ref("0")
 </script>

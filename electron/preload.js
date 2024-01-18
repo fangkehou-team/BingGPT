@@ -25,6 +25,7 @@ function withPrototype(obj) {
     return obj
 }
 
+
 window.addEventListener('DOMContentLoaded', () => {
     // Change page title
     document.title = 'BingGPT'
@@ -65,6 +66,44 @@ window.addEventListener('DOMContentLoaded', () => {
     if (previewOptions) {
       previewOptions.style.cssText = 'bottom: 1px'
     }*/
+
+    if (window.location.href.indexOf('https://www.bing.com/') !== -1) {
+
+        let informationDiv = document.createElement("div");
+        informationDiv.style.cssText="width: 100vw; height: 100vh; position: absolute; background: #000000; " +
+            "z-index: 99999; top: 0; left: 0; display:flex;\n" +
+            "    align-items:center;\n" +
+            "    justify-content:center;";
+
+        informationDiv.innerHTML='<p ' +
+            'style="color: white; text-align: center; width: 100%; display: inline-block; font-weight: bold; font-size: large; vertical-align: middle">' +
+            'Getting Cookies......Please wait for 10 or 20s</p>';
+
+        document.body.appendChild(informationDiv);
+
+        let count = 0;
+        let cookieLength = 0;
+
+        setInterval(() => {
+
+            let cookieLengthNew = document.cookie.length;
+
+            if (cookieLength == 0 || cookieLength != cookieLengthNew) {
+                cookieLength = cookieLengthNew;
+                count = 0;
+            } else {
+                count++;
+            }
+
+            console.log(cookieLength);
+
+            // if (count > 6) {
+            //     let urlWrapper = ipcRenderer.sendSync("get-wrapper-url") + "?login=1"
+            //     window.location.replace(urlWrapper);
+            // }
+        }, 1500)
+    }
+
 })
 
 // New topic
@@ -391,6 +430,11 @@ window.ipcRenderer = {
 
     getComposeUrl() {
         const resp = ipcRenderer.sendSync("get-chat-url", "compose")
+        return resp
+    },
+
+    getWrapperUrl() {
+        const resp = ipcRenderer.sendSync("get-wrapper-url")
         return resp
     },
 }

@@ -271,15 +271,15 @@ function createWindow() {
         return {action: 'deny'}
     })
     // Login
-    mainWindow.webContents.on('will-redirect', (event, url) => {
-        if (
-            url.indexOf('https://bing.com') !== -1
-        ) {
-            event.preventDefault()
-            // Get cookies
-            mainWindow.loadURL(urlUtil.format(bingUrl + "?login=1"))
-        }
-    })
+    // mainWindow.webContents.on('will-redirect', (event, url) => {
+    //     if (
+    //         url.indexOf('https://bing.com') !== -1
+    //     ) {
+    //         event.preventDefault()
+    //         // Get cookies
+    //         mainWindow.loadURL("https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=11&ct=1705494251&rver=6.0.5286.0&wp=MBI_SSL&wreply=https:%2F%2fwww.bing.com%2Fsecure%2FPassport.aspx%3Fpopup%3D1%26ssl%3D1&lc=1033&id=264960&checkda=1")
+    //     }
+    // })
     // Modify Content Security Policy
     mainWindow.webContents.session.webRequest.onHeadersReceived(
         (details, callback) => {
@@ -386,18 +386,18 @@ function createWindow() {
         }
     })
     // Replace compose page or reload window
-    mainWindow.webContents.on('dom-ready', () => {
-        const url = mainWindow.webContents.getURL()
-        if (url === bingUrl) {
-            mainWindow.webContents.send('replace-compose-page', isDarkMode)
-        }
-
-        if (url.indexOf('https://www.bing.com') !== -1) {
-            setTimeout(()=>{
-                mainWindow.webContents.loadURL(urlUtil.format(bingUrl + "?login=1"));
-            }, 3000);
-        }
-    })
+    // mainWindow.webContents.on('dom-ready', () => {
+    //     const url = mainWindow.webContents.getURL()
+    //     if (url === bingUrl) {
+    //         mainWindow.webContents.send('replace-compose-page', isDarkMode)
+    //     }
+    //
+    //     // if (url.indexOf('https://www.bing.com/') !== -1) {
+    //     //     setTimeout(()=>{
+    //     //         mainWindow.webContents.loadURL(urlUtil.format(bingUrl + "?login=1"));
+    //     //     }, 3000);
+    //     // }
+    // })
 }
 
 app.whenReady().then(() => {
@@ -479,6 +479,12 @@ app.whenReady().then(() => {
         }schemeovr=1&FORM=SHORUN&udscs=1&udsnav=1&setlang=${locale}&features=udssydinternal&clientscopes=noheader,coauthor,chat,channelstable,&udsframed=1`
 
     })
+
+    //getWrapperUrl
+    ipcMain.on("get-wrapper-url", (event) => {
+        event.returnValue = getWrapperUrl();
+    })
+
     createWindow()
     app.on('activate', () => {
         if (BrowserWindow.getAllWindows().length === 0) createWindow()
