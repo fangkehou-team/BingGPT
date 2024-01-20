@@ -3,7 +3,7 @@ import contextMenu from 'electron-context-menu'
 import path from 'node:path'
 import Store from 'electron-store'
 import * as urlUtil from "node:url"
-import { autoUpdater } from "electron-updater"
+import {autoUpdater, UpdateInfo} from "electron-updater"
 
 // The built directory structure
 //
@@ -54,8 +54,6 @@ function getWrapperUrl() {
 }
 
 function createWindow() {
-
-    autoUpdater.checkForUpdatesAndNotify()
 
     // Get theme settings
     const theme = config.get('theme')
@@ -401,6 +399,45 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
+    autoUpdater.autoDownload = false;
+    autoUpdater.autoInstallOnAppQuit = true;
+
+    autoUpdater.on('update-available', (info) => {
+        let result = dialog.showMessageBoxSync({
+            message: "A new version of BingGPT available.\n",
+            detail: `New version ${info.version} released. Would you like to download it?`,
+            type: "info",
+            buttons: ["Later", "Detail", "Download Now"],
+            defaultId: 1,
+            cancelId: 0,
+            title: `New version ${info.version}`
+        })
+
+        if (result == 2) {
+            autoUpdater.downloadUpdate()
+        } else if (result == 1) {
+            shell.openExternal('https://github.com/fangkehou-team/BingGPT/releases')
+        }
+    })
+
+    autoUpdater.on('update-downloaded', (r) => {
+        let result = dialog.showMessageBoxSync({
+            message: "New version of BingGPT is ready for install.\n",
+            detail: `Would you like to install now?`,
+            type: "info",
+            buttons: ["Later", "Install Now"],
+            defaultId: 1,
+            cancelId: 0,
+            title: `New version is ready to install`
+        })
+
+        if (result == 1) {
+            autoUpdater.quitAndInstall()
+        }
+    })
+
+    autoUpdater.checkForUpdatesAndNotify()
+
     // Save to file
     ipcMain.on('export-data', (event, format, dataURL) => {
         if (format) {
