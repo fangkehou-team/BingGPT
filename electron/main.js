@@ -107,6 +107,13 @@ function createWindow() {
         showSelectAll: false,
         append: (defaultActions, parameters, browserWindow) => [
             {
+                label: 'Open Devtools',
+                visible: parameters.selectionText.trim().length === 0,
+                click: () => {
+                    mainWindow.webContents.openDevTools();
+                },
+            },
+            {
                 label: 'Reload',
                 visible: parameters.selectionText.trim().length === 0,
                 click: () => {
