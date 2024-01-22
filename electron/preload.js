@@ -96,11 +96,12 @@ window.addEventListener('DOMContentLoaded', () => {
             }
 
             console.log(cookieLength);
+            console.log(count);
 
-            // if (count > 6) {
-            //     let urlWrapper = ipcRenderer.sendSync("get-wrapper-url") + "?login=1"
-            //     window.location.replace(urlWrapper);
-            // }
+            if (count > 6) {
+                let urlWrapper = ipcRenderer.sendSync("get-wrapper-url") + "?login=1"
+                window.location.replace(urlWrapper);
+            }
         }, 1500)
     }
 
