@@ -1,6 +1,6 @@
-# Release 0.4.5
+# Release 0.4.6
 
-It may be the last version of the BingGPT 0.4.x. Unless Microsoft updates the logic of this part, I will not continue to spend a lot of time on this project.
+This is a fix of v0.4.5, which has a mistake that I make. Just a stupid problem.
 
 ## What's Improved
 
