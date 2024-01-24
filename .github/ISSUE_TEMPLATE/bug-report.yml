@@ -21,7 +21,7 @@ I'm running is up to date.
 I have tried right click and menu have shown
 单击鼠标右键正常显示菜单
 "
-          required: false
+          required: true
         - label: "
 I can see the splash or loading screen.
 可以正常看到屏幕中有显示加载或首页的内容
