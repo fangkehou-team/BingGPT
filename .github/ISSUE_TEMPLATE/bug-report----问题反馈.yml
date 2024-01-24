@@ -1,0 +1,94 @@
+name: Bug report -- 问题反馈
+description: Create a report to help us improve
+title: "[BUG] Briefly describe the problem you are facing in one sentence."
+labels: ["bug"]
+body:
+  - type: checkboxes
+    id: ensure
+    attributes:
+      label: Verify steps
+      description: "
+在提交之前，请确认
+Please verify that you've followed these steps
+"
+      options:
+        - label: "
+I'm running is up to date.
+已安装最新版本.
+"
+          required: true
+        - label: "
+I have tried right click and menu have shown
+单击鼠标右键正常显示菜单
+"
+          required: false
+        - label: "
+I can see the splash or loading screen.
+可以正常看到屏幕中有显示加载或首页的内容
+"
+          required: true
+        - label: "
+I have searched on the [issue tracker](……/) for a related issue.
+我已经在 [Issue Tracker](……/) 中找过我要提出的问题
+"
+          required: true
+  - type: input
+    attributes:
+      label: "
+BingGPT Version
+软件版本
+"
+      description: ""
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: "
+What OS are you seeing the problem on?
+操作系统/桌面环境
+"
+      multiple: true
+      options:
+        - macOS
+        - Windows
+        - Linux (GTK-based Desktop)
+        - Linux (QT-based Desktop)
+        - Linux (Others)
+  - type: textarea
+    attributes:
+      render: markdown
+      value: "
+<!-- 请注意：如果您处在中国大陆境内，请确保您的VPN处于开启状态，并且提交问题前请检查您的网络是否畅通。 -->
+
+**Describe the bug**
+A clear and concise description of what the bug is.
+
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Go to '...'
+2. Click on '....'
+3. Scroll down to '....'
+4. See error
+
+**Expected behavior**
+A clear and concise description of what you expected to happen.
+
+**Screenshots**
+If applicable, add screenshots to help explain your problem.
+
+**Desktop (please complete the following information):**
+ - OS: [e.g. Windows, Linux with (Gnome, KDE, etc.) Kernel version x.x, Mac OS]
+ - Arch: [e.g. x86, arm64]
+ - Program Version [e.g. 22]
+
+**Additional context**
+Add any other context about the problem here.
+"
+      label: Description
+      description: "
+A clear and concise description of what the bug is.
+简要描述您遇到的问题
+"
+    validations:
+      required: true
