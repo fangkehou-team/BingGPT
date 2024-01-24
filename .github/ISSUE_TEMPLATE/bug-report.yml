@@ -60,7 +60,7 @@ What OS are you seeing the problem on?
         - Linux (Others)
   - type: textarea
     attributes:
-      render: markdown
+      render: m
       value: "
 <!-- 请注意：如果您处在中国大陆境内，请确保您的VPN处于开启状态，并且提交问题前请检查您的网络是否畅通。 -->
 
