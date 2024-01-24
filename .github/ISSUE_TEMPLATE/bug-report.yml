@@ -55,6 +55,8 @@ I have searched on the [issue tracker](……/) for a related issue.
         - Linux (GTK-based Desktop)
         - Linux (QT-based Desktop)
         - Linux (Others)
+    validations:
+      required: true
   - type: dropdown
     id: arch
     attributes:
@@ -65,6 +67,8 @@ I have searched on the [issue tracker](……/) for a related issue.
       options:
         - x86
         - arm64
+    validations:
+      required: true
   - type: textarea
     attributes:
       label: Description
@@ -101,4 +105,4 @@ I have searched on the [issue tracker](……/) for a related issue.
         3. Scroll down to '....'
         4. See error
     validations:
-      required: false
+      required: true
