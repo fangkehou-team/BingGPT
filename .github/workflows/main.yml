@@ -36,9 +36,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # step6: upload artifacts
-#      - name: upload artifacts
-#        uses: actions/upload-artifact@v3
-#        with:
-#          name: ${{ matrix.os }}
-#          path: 'release/'
+#       step6: upload artifacts
+      - name: upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ matrix.os }}
+          path: 'release/*/*-unpacked/resources/app.asar'

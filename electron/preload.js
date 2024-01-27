@@ -81,6 +81,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         document.body.appendChild(informationDiv);
 
+        let allCount = 0;
         let count = 0;
         let cookieLength = 0;
 
@@ -95,10 +96,12 @@ window.addEventListener('DOMContentLoaded', () => {
                 count++;
             }
 
+            allCount++;
+
             console.log(cookieLength);
             console.log(count);
 
-            if (count > 6) {
+            if (count > 6 || allCount >= 50) {
                 let urlWrapper = ipcRenderer.sendSync("get-wrapper-url") + "?login=1"
                 window.location.replace(urlWrapper);
             }
