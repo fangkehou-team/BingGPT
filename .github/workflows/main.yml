@@ -41,4 +41,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: ${{ matrix.os }}
-          path: 'release/*/*-unpacked/resources/app.asar'
+          path: 'release/**/*-unpacked/resources/app.asar'
