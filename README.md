@@ -1,7 +1,7 @@
 <p align="center">
   <img width="180" src="./public/icon.png" alt="BingGPT">
   <h1 align="center">BingGPT</h1>
-  <p align="center">Desktop application of new Bing's AI-powered chat</p>
+  <p align="center">BingGPT Enhanced Editon - Desktop application of new Bing's AI-powered chat</p>
 </p>
 
 <p align="center">
