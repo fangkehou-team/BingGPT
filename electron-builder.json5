@@ -6,7 +6,7 @@
   "appId": "org.eu.fangkehou.binggptee",
   "asar": true,
   "productName": "BingGPT",
-  "copyright": "Copyright © 2023 dice2o, Team Fangkehou",
+  "copyright": "Copyright © 2023 dice2o, 2023 - 2024 Team Fangkehou",
   "directories": {
     "output": "release/${version}"
   },
