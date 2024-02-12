@@ -425,7 +425,7 @@ app.whenReady().then(() => {
         if (result == 2) {
             autoUpdater.downloadUpdate()
         } else if (result == 1) {
-            shell.openExternal('https://github.com/fangkehou-team/BingGPT/releases')
+            shell.openExternal('https://github.com/fangkehou-team/BingGPT_Enhanced_Editon/releases')
         }
     })
 
