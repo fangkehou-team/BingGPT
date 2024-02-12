@@ -252,14 +252,14 @@ function createWindow() {
                 label: 'Feedback',
                 visible: parameters.selectionText.trim().length === 0,
                 click: () => {
-                    shell.openExternal('https://github.com/fangkehou-team/BingGPT/issues')
+                    shell.openExternal('https://github.com/fangkehou-team/BingGPT_Enhanced_Editon/issues')
                 },
             },
             {
                 label: 'BingGPT v0.4.3',
                 visible: parameters.selectionText.trim().length === 0,
                 click: () => {
-                    shell.openExternal('https://github.com/fangkehou-team/BingGPT/releases')
+                    shell.openExternal('https://github.com/fangkehou-team/BingGPT_Enhanced_Editon/releases')
                 },
             },
         ],
