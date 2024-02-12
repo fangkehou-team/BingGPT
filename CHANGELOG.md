@@ -19,3 +19,7 @@
 - Nope, but if you can help me with the broken part of this repo, I will be grateful.
 
 If you can help me improve this app, Please contribute to this repository! Pull Request and Issue is welcome.
+
+## And If you don't want to update the whole Application:
+
+- You can download the `app.asar` from the latest GitHub Action build that matches your platform and replace the original one, which is just a file about `11 MB`.
