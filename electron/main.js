@@ -414,7 +414,7 @@ app.whenReady().then(() => {
     autoUpdater.on('update-available', (info) => {
         let result = dialog.showMessageBoxSync({
             message: "A new version of BingGPT available.\n",
-            detail: `New version ${info.version} released. Would you like to download it?`,
+            detail: `New version ${info.version} released. Would you like to download it?\nAnd if you don't want to update the whole Application，You can download the app.asar from the latest GitHub Action build that matches your platform and replace the original one on your own, which is just a file about 11 MB`,
             type: "info",
             buttons: ["Later", "Detail", "Download Now"],
             defaultId: 1,
