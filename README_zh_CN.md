@@ -24,6 +24,8 @@
 
 本仓库非原作者，本仓库代码由 Team Fangkehou 负责维护。
 
+微软现已推出网页版Copilot，推荐体验！https://copilot.microsoft.com/
+
 ## 安装
 
 请前往 [Releases 页面](https://github.com/fangkehou-team/BingGPT/releases) 获取最新版本

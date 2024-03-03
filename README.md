@@ -22,6 +22,8 @@ English | [中文](./README_zh_CN.md)
 
 Modified By Team Fangkehou.
 
+You can try the new copilot website by microsoft to get the original experence of BingGPT: https://copilot.microsoft.com/
+
 ## Install
 
 Please go to [Releases page of this repository](https://github.com/fangkehou-team/BingGPT/releases) to get the latest build.
