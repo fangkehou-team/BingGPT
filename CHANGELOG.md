@@ -1,10 +1,8 @@
-# Release 0.4.7
+# Release 0.4.8
 
 ## What's Improved
 
-- In the last version, Cloudflare Captcha can not display properly because of security policies. In this version, the security policies has changed to looser to fix that.
-- Change the UserAgent from default to Edge 121 so users can get more chat logs.
-- the link of the repository has changed to [https://github.com/fangkehou-team/BingGPT_Enhanced_Editon](https://github.com/fangkehou-team/BingGPT_Enhanced_Editon)
+- use a trick from electron to let the application protocol to be edge://
 
 ## What's Broken
 
