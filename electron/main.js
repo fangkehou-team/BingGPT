@@ -46,7 +46,7 @@ function getWrapperUrl() {
         return VITE_DEV_SERVER_URL;
     } else {
         return urlUtil.format({
-            protocol: 'file',
+            protocol: 'edge',
             slashes: true,
             pathname: path.join(process.env.DIST, 'index.html')
         })
@@ -97,9 +97,38 @@ function createWindow() {
     // Get always on top settings
     const alwaysOnTop = config.get('alwaysOnTop')
     mainWindow.setAlwaysOnTop(alwaysOnTop)
-
-    // Hide main menu (Windows)
+    
+      // darwin表示macOS，针对macOS的设置  process.platform === 'darwin'
+  if (process.platform === 'darwin') {
+    const template = [{
+      label: '我的应用',
+      submenu: [
+        { label: '关于', accelerator: 'CmdOrCtrl+I', role: 'about' },
+        { type: 'separator' },
+        { label: '隐藏', role: 'hide' },
+        { label: '隐藏其他', role: 'hideOthers' },
+        { type: 'separator' },
+        { label: '服务', role: 'services' },
+        { label: '退出', accelerator: 'Command+Q',role: 'quit' }
+      ]
+    },
+    {
+      label: '编辑',
+      submenu: [
+        { label: '复制', accelerator: 'CmdOrCtrl+C', role: 'copy' },
+        { label: '粘贴', accelerator: 'CmdOrCtrl+V', role: 'paste' },
+        { label: '剪切', accelerator: 'CmdOrCtrl+X', role: 'cut' },
+        { label: '撤销', accelerator: 'CmdOrCtrl+Z', role: 'undo' },
+        { label: '重做', accelerator: 'Shift+CmdOrCtrl+Z', role: 'redo' },
+        { label: '全选', accelerator: 'CmdOrCtrl+A', role: 'selectAll' }
+      ]
+    }]
+    const menu = Menu.buildFromTemplate(template)
+    Menu.setApplicationMenu(menu)
+  } else {
+    // windows及linux系统 Hide main menu
     Menu.setApplicationMenu(Menu.buildFromTemplate([]))
+  }
     // Create context menu
     contextMenu({
         window: mainWindow.webContents,
@@ -408,6 +437,12 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
+
+    protocol.handle('edge', (request) => {
+        const filePath = request.url.slice('edge://'.length)
+        return net.fetch(url.pathToFileURL(path.join(__dirname, filePath)).toString())
+      })
+
     autoUpdater.autoDownload = false;
     autoUpdater.autoInstallOnAppQuit = true;
 

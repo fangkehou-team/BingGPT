@@ -24,6 +24,8 @@ Modified By Team Fangkehou.
 
 You can try the new copilot website by microsoft to get the original experence of BingGPT: https://copilot.microsoft.com/
 
+> __if you like this app, please give me a Star. Thanks!__
+
 ## Install
 
 Please go to [Releases page of this repository](https://github.com/fangkehou-team/BingGPT/releases) to get the latest build.

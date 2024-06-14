@@ -26,6 +26,8 @@
 
 微软现已推出网页版Copilot，推荐体验！https://copilot.microsoft.com/
 
+> __如果你喜欢这个项目，请给这个项目点一个Star，秋梨膏！__
+
 ## 安装
 
 请前往 [Releases 页面](https://github.com/fangkehou-team/BingGPT/releases) 获取最新版本
