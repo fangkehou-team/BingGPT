@@ -30,5 +30,6 @@
     "vite-plugin-electron-renderer": "^0.14.5",
     "vue-tsc": "^1.8.8"
   },
-  "main": "dist-electron/main.js"
+  "main": "dist-electron/main.js",
+  "packageManager": "pnpm@8.11.0+sha1.01bf39424f1008f29012bbae851d2acb8a20a0d0"
 }

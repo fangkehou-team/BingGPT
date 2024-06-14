@@ -1,9 +1,10 @@
-import {app, BrowserWindow, dialog, ipcMain, Menu, nativeTheme, shell} from 'electron'
+import {app, BrowserWindow, dialog, ipcMain, Menu, nativeTheme, shell, protocol, net} from 'electron'
 import contextMenu from 'electron-context-menu'
 import path from 'node:path'
 import Store from 'electron-store'
 import * as urlUtil from "node:url"
 import {autoUpdater, UpdateInfo} from "electron-updater"
+import * as url from "node:url";
 
 // The built directory structure
 //
@@ -436,12 +437,16 @@ function createWindow() {
     // })
 }
 
+protocol.registerSchemesAsPrivileged([
+    { scheme: 'edge', privileges: { standard: true, supportFetchAPI: true } }
+])
+
 app.whenReady().then(() => {
 
     protocol.handle('edge', (request) => {
         const filePath = request.url.slice('edge://'.length)
-        return net.fetch(url.pathToFileURL(path.join(__dirname, filePath)).toString())
-      })
+        return net.fetch(new URL(filePath, 'file:').toString())
+    })
 
     autoUpdater.autoDownload = false;
     autoUpdater.autoInstallOnAppQuit = true;
