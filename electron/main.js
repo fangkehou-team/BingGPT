@@ -110,26 +110,27 @@ function createWindow() {
     // darwin表示macOS，针对macOS的设置  process.platform === 'darwin'
     if (process.platform === 'darwin') {
         const template = [{
-            label: '我的应用',
+            //label: '我的应用',
+            label: 'BingGPT',
             submenu: [
-                {label: '关于', accelerator: 'CmdOrCtrl+I', role: 'about'},
+                {label: 'About BingGPT', accelerator: 'CmdOrCtrl+I', role: 'about'},
                 {type: 'separator'},
-                {label: '隐藏', role: 'hide'},
-                {label: '隐藏其他', role: 'hideOthers'},
+                {label: 'Hide BingGPT', role: 'hide'},
+                {label: 'Hide Others', role: 'hideOthers'},
                 {type: 'separator'},
-                {label: '服务', role: 'services'},
-                {label: '退出', accelerator: 'Command+Q', role: 'quit'}
+                {label: 'Services', role: 'services'},
+                {label: 'Quit BingGPT', accelerator: 'Command+Q', role: 'quit'}
             ]
         },
             {
-                label: '编辑',
+                label: 'Edit',
                 submenu: [
-                    {label: '复制', accelerator: 'CmdOrCtrl+C', role: 'copy'},
-                    {label: '粘贴', accelerator: 'CmdOrCtrl+V', role: 'paste'},
-                    {label: '剪切', accelerator: 'CmdOrCtrl+X', role: 'cut'},
-                    {label: '撤销', accelerator: 'CmdOrCtrl+Z', role: 'undo'},
-                    {label: '重做', accelerator: 'Shift+CmdOrCtrl+Z', role: 'redo'},
-                    {label: '全选', accelerator: 'CmdOrCtrl+A', role: 'selectAll'}
+                    {label: 'Copy', accelerator: 'CmdOrCtrl+C', role: 'copy'},
+                    {label: 'Paste', accelerator: 'CmdOrCtrl+V', role: 'paste'},
+                    {label: 'Cut', accelerator: 'CmdOrCtrl+X', role: 'cut'},
+                    {label: 'Undo', accelerator: 'CmdOrCtrl+Z', role: 'undo'},
+                    {label: 'Redo', accelerator: 'Shift+CmdOrCtrl+Z', role: 'redo'},
+                    {label: 'Select All', accelerator: 'CmdOrCtrl+A', role: 'selectAll'}
                 ]
             }]
         const menu = Menu.buildFromTemplate(template)
