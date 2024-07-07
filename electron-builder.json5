@@ -25,7 +25,13 @@
         ]
       }
     ],
-    "artifactName": "${productName}-Mac-${arch}-${version}-Installer.${ext}"
+    "artifactName": "${productName}-Mac-${arch}-${version}-Installer.${ext}",
+    "hardenedRuntime": true,
+    "entitlements": "entitlements.mac.plist",
+    "extendInfo": {
+      "NSMicrophoneUsageDescription":  "Microphone",
+      "NSCameraUsageDescription": "Camera"
+    }
   },
   "win": {
     "icon": "public/icon.ico",

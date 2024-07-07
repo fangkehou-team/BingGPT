@@ -6,6 +6,7 @@ import * as urlUtil from "node:url"
 import {autoUpdater, UpdateInfo} from "electron-updater"
 import * as url from "node:url"
 import packageJson from "../package.json";
+import requestAllMediaAccess from "./macPermission";
 
 // The built directory structure
 //
@@ -68,6 +69,11 @@ function createWindow() {
                 : false
 
     nativeTheme.themeSource = theme
+
+    //request camera and microphone permission(only for macOS)
+    if (process.platform === 'darwin') {
+        requestAllMediaAccess();
+    }
 
     // win = new BrowserWindow({
     //   icon: path.join(process.env.VITE_PUBLIC, 'electron-vite.svg'),
