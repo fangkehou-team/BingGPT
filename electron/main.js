@@ -4,7 +4,8 @@ import path from 'node:path'
 import Store from 'electron-store'
 import * as urlUtil from "node:url"
 import {autoUpdater, UpdateInfo} from "electron-updater"
-import * as url from "node:url";
+import * as url from "node:url"
+import packageJson from "../package.json";
 
 // The built directory structure
 //
@@ -287,7 +288,7 @@ function createWindow() {
                 },
             },
             {
-                label: 'BingGPT v0.4.3',
+                label: `BingGPT v${packageJson.version}`,
                 visible: parameters.selectionText.trim().length === 0,
                 click: () => {
                     shell.openExternal('https://github.com/fangkehou-team/BingGPT_Enhanced_Editon/releases')
