@@ -439,7 +439,7 @@ function createWindow() {
 }
 
 protocol.registerSchemesAsPrivileged([
-    {scheme: 'edge', privileges: {standard: true, supportFetchAPI: true}}
+    {scheme: 'edge', privileges: {secure: true, standard: true, supportFetchAPI: true}}
 ])
 
 app.whenReady().then(() => {
